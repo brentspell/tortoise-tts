@@ -133,3 +133,8 @@ dmypy.json
 .custom/*
 results/*
 debug_states/*
+
+# https://github.com/neonbjb/DL-Art-School
+# https://github.com/neonbjb/ocotillo
+dlas/
+ocotillo/
