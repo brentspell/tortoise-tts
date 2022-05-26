@@ -1,0 +1,419 @@
+### Examples
+
+#### <a name="twisters" href="#twisters">Tongue Twisters</a>
+|Speaker|Output|Reference|Text|
+|-|-|-|-|
+|trump-3            |<audio src="/file/gradio/samples/twisters/out-00.mp3" controls></audio>|<audio src="/file/gradio/samples/twisters/ref-00.mp3" controls></audio>|Peter Piper picked a peck of pickled peppers.|
+|drill-sergeant     |<audio src="/file/gradio/samples/twisters/out-01.mp3" controls></audio>|<audio src="/file/gradio/samples/twisters/ref-01.mp3" controls></audio>|How much wood would a woodchuck chuck if a woodchuck could chuck wood?|
+|indonesian-female  |<audio src="/file/gradio/samples/twisters/out-02.mp3" controls></audio>|<audio src="/file/gradio/samples/twisters/ref-02.mp3" controls></audio>|She sells seashells by the seashore.|
+|dog                |<audio src="/file/gradio/samples/twisters/out-03.mp3" controls></audio>|<audio src="/file/gradio/samples/twisters/ref-03.mp3" controls></audio>|Fuzzy Wuzzy was a bear. Fuzzy Wuzzy had no hair. Fuzzy Wuzzy wasn’t fuzzy, was he?|
+|asmr-woman         |<audio src="/file/gradio/samples/twisters/out-04.mp3" controls></audio>|<audio src="/file/gradio/samples/twisters/ref-04.mp3" controls></audio>|Susie works in a shoeshine shop. Where she shines she sits, and where she sits she shines.|
+|czech-female-2     |<audio src="/file/gradio/samples/twisters/out-05.mp3" controls></audio>|<audio src="/file/gradio/samples/twisters/ref-05.mp3" controls></audio>|A skunk sat on a stump and thunk the stump stunk, but the stump thunk the skunk stunk.|
+|trump-4            |<audio src="/file/gradio/samples/twisters/out-06.mp3" controls></audio>|<audio src="/file/gradio/samples/twisters/ref-06.mp3" controls></audio>|Fred fed Ted bread, and Ted fed Fred bread.|
+|madmax             |<audio src="/file/gradio/samples/twisters/out-07.mp3" controls></audio>|<audio src="/file/gradio/samples/twisters/ref-07.mp3" controls></audio>|You know New York, you need New York, you know you need unique New York.|
+|teen-girl          |<audio src="/file/gradio/samples/twisters/out-08.mp3" controls></audio>|<audio src="/file/gradio/samples/twisters/ref-08.mp3" controls></audio>|If you must cross a course cross cow across a crowded cow crossing, cross the cross coarse cow across the crowded cow crossing carefully.|
+|southern-grandpa   |<audio src="/file/gradio/samples/twisters/out-09.mp3" controls></audio>|<audio src="/file/gradio/samples/twisters/ref-09.mp3" controls></audio>|How many berries could a bare berry carry, if a bare berry could carry berries?|
+|crone              |<audio src="/file/gradio/samples/twisters/out-10.mp3" controls></audio>|<audio src="/file/gradio/samples/twisters/ref-10.mp3" controls></audio>|The sixth sick Sheik's sixth sheep's sick.|
+|australian-male    |<audio src="/file/gradio/samples/twisters/out-11.mp3" controls></audio>|<audio src="/file/gradio/samples/twisters/ref-11.mp3" controls></audio>|An ape hates grape cakes.|
+|tiny-dog           |<audio src="/file/gradio/samples/twisters/out-12.mp3" controls></audio>|<audio src="/file/gradio/samples/twisters/ref-12.mp3" controls></audio>|A tutor who tooted the flute tried to tutor two tooters to toot. Said the two to the tutor, \"Is it harder to toot or to tutor two tooters to toot?\"|
+|nasal              |<audio src="/file/gradio/samples/twisters/out-13.mp3" controls></audio>|<audio src="/file/gradio/samples/twisters/ref-13.mp3" controls></audio>|These thousand tricky tongue twisters trip thrillingly off the tongue.|
+|sofia              |<audio src="/file/gradio/samples/twisters/out-14.mp3" controls></audio>|<audio src="/file/gradio/samples/twisters/ref-14.mp3" controls></audio>|Six thick thistle sticks. Six thick thistles stick.|
+|indian-male        |<audio src="/file/gradio/samples/twisters/out-15.mp3" controls></audio>|<audio src="/file/gradio/samples/twisters/ref-15.mp3" controls></audio>|Pad kid poured curd pulled cod.|
+|female-boston      |<audio src="/file/gradio/samples/twisters/out-16.mp3" controls></audio>|<audio src="/file/gradio/samples/twisters/ref-16.mp3" controls></audio>|Top chopstick shops stock top chopsticks.|
+|british-woman-2    |<audio src="/file/gradio/samples/twisters/out-17.mp3" controls></audio>|<audio src="/file/gradio/samples/twisters/ref-17.mp3" controls></audio>|Of all the smells I have ever smelt, I never smelt a smell that smelt like that smell smelt.|
+|east-african-female|<audio src="/file/gradio/samples/twisters/out-18.mp3" controls></audio>|<audio src="/file/gradio/samples/twisters/ref-18.mp3" controls></audio>|We supply wristwatches for witch-watchers watching witches Washington wishes watched.|
+|french-female      |<audio src="/file/gradio/samples/twisters/out-19.mp3" controls></audio>|<audio src="/file/gradio/samples/twisters/ref-19.mp3" controls></audio>|Buffalo buffalo Buffalo buffalo buffalo buffalo Buffalo buffalo.|
+
+
+#### <a name="sus" href="#sus">Semantically-Unpredictable Sentences</a>
+|Speaker|Output|Reference|Text|
+|-|-|-|-|
+|sofia            |<audio src="/file/gradio/samples/sus/out-00.mp3" controls></audio>|<audio src="/file/gradio/samples/sus/ref-00.mp3" controls></audio>|The agrarian grams overran the counterproductive tablespoon.|
+|old-british-woman|<audio src="/file/gradio/samples/sus/out-01.mp3" controls></audio>|<audio src="/file/gradio/samples/sus/ref-01.mp3" controls></audio>|The unquestioned folders sprang the abject ability.|
+|chinese-male     |<audio src="/file/gradio/samples/sus/out-02.mp3" controls></audio>|<audio src="/file/gradio/samples/sus/ref-02.mp3" controls></audio>|The sluggish industries overtook the sinister fiat.|
+|young-girl-2     |<audio src="/file/gradio/samples/sus/out-03.mp3" controls></audio>|<audio src="/file/gradio/samples/sus/ref-03.mp3" controls></audio>|The portly spinners drew the hidebound organist.|
+|trump-5          |<audio src="/file/gradio/samples/sus/out-04.mp3" controls></audio>|<audio src="/file/gradio/samples/sus/ref-04.mp3" controls></audio>|The amicable chests became the unprepared cockroach.|
+|british          |<audio src="/file/gradio/samples/sus/out-05.mp3" controls></audio>|<audio src="/file/gradio/samples/sus/ref-05.mp3" controls></audio>|The doctrinal artisans outran the combative percentile.|
+|jason-statham    |<audio src="/file/gradio/samples/sus/out-06.mp3" controls></audio>|<audio src="/file/gradio/samples/sus/ref-06.mp3" controls></audio>|The expansive premiums begat the necessary manhood.|
+|pushy            |<audio src="/file/gradio/samples/sus/out-07.mp3" controls></audio>|<audio src="/file/gradio/samples/sus/ref-07.mp3" controls></audio>|The mysterious bullets began the mythological browser.|
+|southern-uptalk  |<audio src="/file/gradio/samples/sus/out-08.mp3" controls></audio>|<audio src="/file/gradio/samples/sus/ref-08.mp3" controls></audio>|The naturalistic concepts rang the identical zombie.|
+|applejack        |<audio src="/file/gradio/samples/sus/out-09.mp3" controls></audio>|<audio src="/file/gradio/samples/sus/ref-09.mp3" controls></audio>|The vernal statues drank the merciless warhead.|
+
+
+#### <a name="coart" href="#coart">Coarticulation</a>
+|Speaker|Output|Reference|Text|
+|-|-|-|-|
+|trump-5          |<audio src="/file/gradio/samples/coart/out-00.mp3" controls></audio>|<audio src="/file/gradio/samples/coart/ref-00.mp3" controls></audio>|The apple is good.|
+|trump-3          |<audio src="/file/gradio/samples/coart/out-01.mp3" controls></audio>|<audio src="/file/gradio/samples/coart/ref-01.mp3" controls></audio>|See the pony go.|
+|ukranian-female-2|<audio src="/file/gradio/samples/coart/out-02.mp3" controls></audio>|<audio src="/file/gradio/samples/coart/ref-02.mp3" controls></audio>|I will pack a lunch.|
+|cod-soldier      |<audio src="/file/gradio/samples/coart/out-03.mp3" controls></audio>|<audio src="/file/gradio/samples/coart/ref-03.mp3" controls></audio>|I see a big picture.|
+|australian-female|<audio src="/file/gradio/samples/coart/out-04.mp3" controls></audio>|<audio src="/file/gradio/samples/coart/ref-04.mp3" controls></audio>|You keep two dolls.|
+|arabic-female    |<audio src="/file/gradio/samples/coart/out-05.mp3" controls></audio>|<audio src="/file/gradio/samples/coart/ref-05.mp3" controls></audio>|Hop some more for me.|
+|us-southern-male |<audio src="/file/gradio/samples/coart/out-06.mp3" controls></audio>|<audio src="/file/gradio/samples/coart/ref-06.mp3" controls></audio>|I see a cabin.|
+|soldier          |<audio src="/file/gradio/samples/coart/out-07.mp3" controls></audio>|<audio src="/file/gradio/samples/coart/ref-07.mp3" controls></audio>|I see the baby.|
+|french-male-2    |<audio src="/file/gradio/samples/coart/out-08.mp3" controls></audio>|<audio src="/file/gradio/samples/coart/ref-08.mp3" controls></audio>|The mean bear growled.|
+|old-man          |<audio src="/file/gradio/samples/coart/out-09.mp3" controls></audio>|<audio src="/file/gradio/samples/coart/ref-09.mp3" controls></audio>|Give me the big ball.|
+
+#### <a name="homographs" href="#homographs">Homographs</a>
+|Speaker|Output|Reference|Text|
+|-|-|-|-|
+|bernie-sanders     |<audio src="/file/gradio/samples/homographs/out-00.mp3" controls></audio>|<audio src="/file/gradio/samples/homographs/ref-00.mp3" controls></audio>|We could lead in lead removal.|
+|czech-female       |<audio src="/file/gradio/samples/homographs/out-01.mp3" controls></audio>|<audio src="/file/gradio/samples/homographs/ref-01.mp3" controls></audio>|The wedding dress sewer fell into the sewer.|
+|east-african-female|<audio src="/file/gradio/samples/homographs/out-02.mp3" controls></audio>|<audio src="/file/gradio/samples/homographs/ref-02.mp3" controls></audio>|Tonight we present you with this present.|
+|western-male       |<audio src="/file/gradio/samples/homographs/out-03.mp3" controls></audio>|<audio src="/file/gradio/samples/homographs/ref-03.mp3" controls></audio>|The prisoner craved dessert after being deserted in the desert.|
+|excited-gravel     |<audio src="/file/gradio/samples/homographs/out-04.mp3" controls></audio>|<audio src="/file/gradio/samples/homographs/ref-04.mp3" controls></audio>|He didn't think he would live to see the live performance.|
+|jason-statham      |<audio src="/file/gradio/samples/homographs/out-05.mp3" controls></audio>|<audio src="/file/gradio/samples/homographs/ref-05.mp3" controls></audio>|A bow was tied to the bow of the ship.|
+|dog                |<audio src="/file/gradio/samples/homographs/out-06.mp3" controls></audio>|<audio src="/file/gradio/samples/homographs/ref-06.mp3" controls></audio>|The bass fisherman had a deep bass voice.|
+|staff-noel         |<audio src="/file/gradio/samples/homographs/out-07.mp3" controls></audio>|<audio src="/file/gradio/samples/homographs/ref-07.mp3" controls></audio>|Close the door before they get too close.|
+|julia-childs       |<audio src="/file/gradio/samples/homographs/out-08.mp3" controls></audio>|<audio src="/file/gradio/samples/homographs/ref-08.mp3" controls></audio>|I object to this object.|
+|nigerian-woman     |<audio src="/file/gradio/samples/homographs/out-09.mp3" controls></audio>|<audio src="/file/gradio/samples/homographs/ref-09.mp3" controls></audio>|He will wind up the toy before throwing it into the wind.|
+
+#### <a name="rare" href="#rare">Rare Words</a>
+|Speaker|Output|Reference|Text|
+|-|-|-|-|
+|nasally       |<audio src="/file/gradio/samples/rare/out-00.mp3" controls></audio>|<audio src="/file/gradio/samples/rare/ref-00.mp3" controls></audio>|His legal acumen makes him likely to win the court case.|
+|asmr-woman    |<audio src="/file/gradio/samples/rare/out-01.mp3" controls></audio>|<audio src="/file/gradio/samples/rare/ref-01.mp3" controls></audio>|Your drawing of Abraham Lincoln talking on an iPhone is charmingly anachronistic.|
+|sam-elliot-2  |<audio src="/file/gradio/samples/rare/out-02.mp3" controls></audio>|<audio src="/file/gradio/samples/rare/ref-02.mp3" controls></audio>|When my brother anthropomorphized the Thanksgiving turkey and pretended to make it wave to us, everyone laughed.|
+|bodett        |<audio src="/file/gradio/samples/rare/out-03.mp3" controls></audio>|<audio src="/file/gradio/samples/rare/ref-03.mp3" controls></audio>|The city library was a bastion to the importance of books.|
+|biden-2       |<audio src="/file/gradio/samples/rare/out-04.mp3" controls></audio>|<audio src="/file/gradio/samples/rare/ref-04.mp3" controls></audio>|As the evening wore on, the atmosphere at the cafe became more convivial.|
+|trump-5       |<audio src="/file/gradio/samples/rare/out-05.mp3" controls></audio>|<audio src="/file/gradio/samples/rare/ref-05.mp3" controls></audio>|With the arrival of spring, buds burgeoned on the tree branches.|
+|trump-3       |<audio src="/file/gradio/samples/rare/out-06.mp3" controls></audio>|<audio src="/file/gradio/samples/rare/ref-06.mp3" controls></audio>|Gerbils are crepuscular, so they can serve as an alarm clock if you keep them in the bedroom.|
+|arabic-female |<audio src="/file/gradio/samples/rare/out-07.mp3" controls></audio>|<audio src="/file/gradio/samples/rare/ref-07.mp3" controls></audio>|I'm eschewing all social media during the election season.|
+|tatum         |<audio src="/file/gradio/samples/rare/out-08.mp3" controls></audio>|<audio src="/file/gradio/samples/rare/ref-08.mp3" controls></audio>|My grandfather's battle with Alzheimer's galvanized me, leading me to choose medicine as a career.|
+|birmingham-man|<audio src="/file/gradio/samples/rare/out-09.mp3" controls></audio>|<audio src="/file/gradio/samples/rare/ref-09.mp3" controls></audio>|His room was a melange of toy cars, books, tennis shoes, and collected rocks.|
+
+#### <a name="questions" href="#questions">Questions/Exclamations</a>
+|Speaker|Output|Reference|Text|
+|-|-|-|-|
+|new-york-woman |<audio src="/file/gradio/samples/questions/out-00.mp3" controls></audio>|<audio src="/file/gradio/samples/questions/ref-00.mp3" controls></audio>|What time is it?|
+|canadian-male  |<audio src="/file/gradio/samples/questions/out-01.mp3" controls></audio>|<audio src="/file/gradio/samples/questions/ref-01.mp3" controls></audio>|Are you married?|
+|james-bond     |<audio src="/file/gradio/samples/questions/out-02.mp3" controls></audio>|<audio src="/file/gradio/samples/questions/ref-02.mp3" controls></audio>|When did you learn English?|
+|jamaican-female|<audio src="/file/gradio/samples/questions/out-03.mp3" controls></audio>|<audio src="/file/gradio/samples/questions/ref-03.mp3" controls></audio>|What did she know, and when did she know it?|
+|cranky-old-man |<audio src="/file/gradio/samples/questions/out-04.mp3" controls></audio>|<audio src="/file/gradio/samples/questions/ref-04.mp3" controls></audio>|After hearing the news, how did you react?|
+|al-pacino-norm |<audio src="/file/gradio/samples/questions/out-05.mp3" controls></audio>|<audio src="/file/gradio/samples/questions/ref-05.mp3" controls></audio>|Yes, I will marry you!|
+|russian-female |<audio src="/file/gradio/samples/questions/out-06.mp3" controls></audio>|<audio src="/file/gradio/samples/questions/ref-06.mp3" controls></audio>|Oh! That is a gorgeous dress!|
+|staff-noel     |<audio src="/file/gradio/samples/questions/out-07.mp3" controls></audio>|<audio src="/file/gradio/samples/questions/ref-07.mp3" controls></audio>|I locked myself out of my house!|
+|jej            |<audio src="/file/gradio/samples/questions/out-08.mp3" controls></audio>|<audio src="/file/gradio/samples/questions/ref-08.mp3" controls></audio>|You underestimate my power!|
+|us-female      |<audio src="/file/gradio/samples/questions/out-09.mp3" controls></audio>|<audio src="/file/gradio/samples/questions/ref-09.mp3" controls></audio>|What a happy ending!|
+
+#### <a name="alphanums" href="#alphanums">Letters, Numbers, Etc.</a>
+|Speaker|Output|Reference|Text|
+|-|-|-|-|
+|british                 |<audio src="/file/gradio/samples/alphanums/out-00.mp3" controls></audio>|<audio src="/file/gradio/samples/alphanums/ref-00.mp3" controls></audio>|A B C D E F G H I J K L M N O P Q R S T U V W X Y Z.|
+|birmingham-man          |<audio src="/file/gradio/samples/alphanums/out-01.mp3" controls></audio>|<audio src="/file/gradio/samples/alphanums/ref-01.mp3" controls></audio>|0 1 2 3 4 5 6 7 8 9.|
+|english-sports-announcer|<audio src="/file/gradio/samples/alphanums/out-02.mp3" controls></audio>|<audio src="/file/gradio/samples/alphanums/ref-02.mp3" controls></audio>|10 11 12 13 14 15 16 17 18 19.|
+|marvin-the-martian      |<audio src="/file/gradio/samples/alphanums/out-03.mp3" controls></audio>|<audio src="/file/gradio/samples/alphanums/ref-03.mp3" controls></audio>|20 30 40 50 60 70 80 90.|
+|irish-female            |<audio src="/file/gradio/samples/alphanums/out-04.mp3" controls></audio>|<audio src="/file/gradio/samples/alphanums/ref-04.mp3" controls></audio>|100 1000 2000 2010 2015 2022 2,022.|
+|wicked-witch            |<audio src="/file/gradio/samples/alphanums/out-05.mp3" controls></audio>|<audio src="/file/gradio/samples/alphanums/ref-05.mp3" controls></audio>|In 1998, The Undertaker threw Mankind off Hell In A Cell, and plummeted 16 ft through an announcer's table.|
+|south-african           |<audio src="/file/gradio/samples/alphanums/out-06.mp3" controls></audio>|<audio src="/file/gradio/samples/alphanums/ref-06.mp3" controls></audio>|Call me at 555-612-9815.|
+|deep-baritone-male      |<audio src="/file/gradio/samples/alphanums/out-07.mp3" controls></audio>|<audio src="/file/gradio/samples/alphanums/ref-07.mp3" controls></audio>|I need about $3.50.|
+|male-cat                |<audio src="/file/gradio/samples/alphanums/out-08.mp3" controls></audio>|<audio src="/file/gradio/samples/alphanums/ref-08.mp3" controls></audio>|Her birthday was 3/16/1984.|
+|french-female           |<audio src="/file/gradio/samples/alphanums/out-09.mp3" controls></audio>|<audio src="/file/gradio/samples/alphanums/ref-09.mp3" controls></audio>|His address is 905 Elm St.|
+
+#### <a name="acronyms" href="#acronyms">Acronyms/Initialisms</a>
+|Speaker|Output|Reference|Text|
+|-|-|-|-|
+|really-nasal   |<audio src="/file/gradio/samples/acronyms/out-00.mp3" controls></audio>|<audio src="/file/gradio/samples/acronyms/ref-00.mp3" controls></audio>|Her mom works at NASA as a scientist.|
+|patrick        |<audio src="/file/gradio/samples/acronyms/out-01.mp3" controls></audio>|<audio src="/file/gradio/samples/acronyms/ref-01.mp3" controls></audio>|Finland is not currently a member of NATO.|
+|beaker-nerd    |<audio src="/file/gradio/samples/acronyms/out-02.mp3" controls></audio>|<audio src="/file/gradio/samples/acronyms/ref-02.mp3" controls></audio>|Did you see the GIF I posted?|
+|nigerian-man   |<audio src="/file/gradio/samples/acronyms/out-03.mp3" controls></audio>|<audio src="/file/gradio/samples/acronyms/ref-03.mp3" controls></audio>|It wasn't a JPEG image.|
+|french-male    |<audio src="/file/gradio/samples/acronyms/out-04.mp3" controls></audio>|<audio src="/file/gradio/samples/acronyms/ref-04.mp3" controls></audio>|Welcome to the U S A.|
+|excited-gravel |<audio src="/file/gradio/samples/acronyms/out-05.mp3" controls></audio>|<audio src="/file/gradio/samples/acronyms/ref-05.mp3" controls></audio>|Your dad joined the A A R P when he retired.|
+|jamaican-male  |<audio src="/file/gradio/samples/acronyms/out-06.mp3" controls></audio>|<audio src="/file/gradio/samples/acronyms/ref-06.mp3" controls></audio>|The N C A A is organized as a for-profit organization.|
+|czech-female   |<audio src="/file/gradio/samples/acronyms/out-07.mp3" controls></audio>|<audio src="/file/gradio/samples/acronyms/ref-07.mp3" controls></audio>|3 M manufactures post-its.|
+|hillbilly-woman|<audio src="/file/gradio/samples/acronyms/out-08.mp3" controls></audio>|<audio src="/file/gradio/samples/acronyms/ref-08.mp3" controls></audio>|The clock struck 3:30 PM.|
+|bass           |<audio src="/file/gradio/samples/acronyms/out-09.mp3" controls></audio>|<audio src="/file/gradio/samples/acronyms/ref-09.mp3" controls></audio>|He had a large collection of CDs in his basement.|
+
+#### <a name="fastspeech" href="#fastspeech">Hard Sentences from the FastSpeech Paper</a>
+|Speaker|Output|Reference|Text|
+|-|-|-|-|
+|deep-english     |<audio src="/file/gradio/samples/fastspeech/out-00.mp3" controls></audio>|<audio src="/file/gradio/samples/fastspeech/ref-00.mp3" controls></audio>|S D S D Pass zero - zero Fail - zero to zero - zero - zero Cancelled - fifty nine to three - two - sixty four Total - fifty nine to three - two -.|
+|horse            |<audio src="/file/gradio/samples/fastspeech/out-01.mp3" controls></audio>|<audio src="/file/gradio/samples/fastspeech/ref-01.mp3" controls></audio>|Calendaring agent failed with error code 0x80070005 while saving appointment.|
+|staff-timmy      |<audio src="/file/gradio/samples/fastspeech/out-02.mp3" controls></audio>|<audio src="/file/gradio/samples/fastspeech/ref-02.mp3" controls></audio>|To deliver interfaces that are significantly better suited to create and process RFC eight twenty one, RFC eight twenty two, RFC nine seventy seven, and MIME content.|
+|nasal            |<audio src="/file/gradio/samples/fastspeech/out-03.mp3" controls></audio>|<audio src="/file/gradio/samples/fastspeech/ref-03.mp3" controls></audio>|You can call me directly at four two five seven zero three seven three four four or my cell four two five four four four seven four seven four or send me a meeting request with all the appropriate information.|
+|german-woman     |<audio src="/file/gradio/samples/fastspeech/out-04.mp3" controls></audio>|<audio src="/file/gradio/samples/fastspeech/ref-04.mp3" controls></audio>|C colon backslash o one two f c p a r t y backslash d e v one two backslash oasys backslash legacy backslash web backslash HELP.|
+|italian-male     |<audio src="/file/gradio/samples/fastspeech/out-05.mp3" controls></audio>|<audio src="/file/gradio/samples/fastspeech/ref-05.mp3" controls></audio>|Take a look at h t t p colon slash slash w w w dot granite dot a b dot c a slash access slash email dot.|
+|prieto           |<audio src="/file/gradio/samples/fastspeech/out-06.mp3" controls></audio>|<audio src="/file/gradio/samples/fastspeech/ref-06.mp3" controls></audio>|So we are back to Extended MAPI and C++ because . Extended MAPI does not have a dual interface VB or VB .Net can read.|
+|orc-male         |<audio src="/file/gradio/samples/fastspeech/out-07.mp3" controls></audio>|<audio src="/file/gradio/samples/fastspeech/ref-07.mp3" controls></audio>|empidtool . exe creates HKEY_CURRENT_USER Software Microsoft Office Common QMPersNum in the registry , queries AD , and the populate the registry with MS employment ID if available else an error code is logged.|
+|highclass-british|<audio src="/file/gradio/samples/fastspeech/out-08.mp3" controls></audio>|<audio src="/file/gradio/samples/fastspeech/ref-08.mp3" controls></audio>|Thanks J RGR Are you using the LDDM driver for this system or the in the build XDDM driver?|
+|staff-will       |<audio src="/file/gradio/samples/fastspeech/out-09.mp3" controls></audio>|<audio src="/file/gradio/samples/fastspeech/ref-09.mp3" controls></audio>|Anuraag backslash backslash r a d u r five backslash d e b u g dot one eight zero nine underscore P R two h dot s t s contains.|
+
+#### <a name="discord" href="#discord">Non-Speech TTS Copypasta from Discord/Twitch</a>
+|Speaker|Output|Reference|Text|
+|-|-|-|-|
+|orc-male         |<audio src="/file/gradio/samples/discord/out-00.mp3" controls></audio>|<audio src="/file/gradio/samples/discord/ref-00.mp3" controls></audio>|RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR|
+|homer            |<audio src="/file/gradio/samples/discord/out-01.mp3" controls></audio>|<audio src="/file/gradio/samples/discord/ref-01.mp3" controls></audio>|lurl lurl lurl lurl lurl lurl lurl lurl lurl lurl lurl lurl lurl lurl lurl lurl lurl lurl lurl lurl lurl lurl lurl lurl lurl lurl lurl lurl lurl lurl lurl lurl lurl lurl lurl lurl lurl lurl lurl|
+|sam-elliot-2     |<audio src="/file/gradio/samples/discord/out-02.mp3" controls></audio>|<audio src="/file/gradio/samples/discord/ref-02.mp3" controls></audio>|soi soi soi soi soi soi soi soi soi soi soi soi soi soi soi soi soi soi|
+|cod-soldier      |<audio src="/file/gradio/samples/discord/out-03.mp3" controls></audio>|<audio src="/file/gradio/samples/discord/ref-03.mp3" controls></audio>|tichdxtche tichdxtche tichdxtche tichdxtche tichdxtche tichdxtche tichdxtche wuuu wuuu tichdxtche tichdxtche tichdxtche tichdxtche|
+|scottish-male    |<audio src="/file/gradio/samples/discord/out-04.mp3" controls></audio>|<audio src="/file/gradio/samples/discord/ref-04.mp3" controls></audio>|anununununununununununaunauanuanaunauanaunauanuanaunauanaunauanaunauanaunauanaunauanaunauanaunaaunauanua|
+|santa            |<audio src="/file/gradio/samples/discord/out-05.mp3" controls></audio>|<audio src="/file/gradio/samples/discord/ref-05.mp3" controls></audio>|baboomzors baboomeded your friend|
+|portuguese-female|<audio src="/file/gradio/samples/discord/out-06.mp3" controls></audio>|<audio src="/file/gradio/samples/discord/ref-06.mp3" controls></audio>|Bananananananabanabananabana|
+|staff-timmy      |<audio src="/file/gradio/samples/discord/out-07.mp3" controls></audio>|<audio src="/file/gradio/samples/discord/ref-07.mp3" controls></audio>|pspspspspspspspspspspspspspspspspspspspspspspspspspspspspspspse|
+|julia-childs     |<audio src="/file/gradio/samples/discord/out-08.mp3" controls></audio>|<audio src="/file/gradio/samples/discord/ref-08.mp3" controls></audio>|yrrr,n yrrr,do yrrr,the yrrr, pxichw?pxichw?pxichw, pxichw?pxichw?|
+|britisharisto    |<audio src="/file/gradio/samples/discord/out-09.mp3" controls></audio>|<audio src="/file/gradio/samples/discord/ref-09.mp3" controls></audio>|pxichxijchpxichxijchpxichxijchpxichxijch|
+
+#### <a name="all" href="#all">All Speakers</a>
+|Speaker|Output|Reference|
+|-|-|-|
+|action-heroine|<audio src="/file/gradio/samples/all/out-00.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-00.mp3" controls></audio>|
+|african-american-male|<audio src="/file/gradio/samples/all/out-01.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-01.mp3" controls></audio>|
+|al-pacino|<audio src="/file/gradio/samples/all/out-02.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-02.mp3" controls></audio>|
+|al-pacino-2|<audio src="/file/gradio/samples/all/out-03.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-03.mp3" controls></audio>|
+|al-pacino-norm|<audio src="/file/gradio/samples/all/out-04.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-04.mp3" controls></audio>|
+|alexa|<audio src="/file/gradio/samples/all/out-05.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-05.mp3" controls></audio>|
+|american-gravely-male|<audio src="/file/gradio/samples/all/out-06.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-06.mp3" controls></audio>|
+|angry-woman|<audio src="/file/gradio/samples/all/out-07.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-07.mp3" controls></audio>|
+|announcer|<audio src="/file/gradio/samples/all/out-08.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-08.mp3" controls></audio>|
+|applejack|<audio src="/file/gradio/samples/all/out-09.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-09.mp3" controls></audio>|
+|arabic-female|<audio src="/file/gradio/samples/all/out-10.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-10.mp3" controls></audio>|
+|ash|<audio src="/file/gradio/samples/all/out-11.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-11.mp3" controls></audio>|
+|asmr-woman|<audio src="/file/gradio/samples/all/out-12.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-12.mp3" controls></audio>|
+|asmr-woman-2|<audio src="/file/gradio/samples/all/out-13.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-13.mp3" controls></audio>|
+|australian-female|<audio src="/file/gradio/samples/all/out-14.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-14.mp3" controls></audio>|
+|australian-male|<audio src="/file/gradio/samples/all/out-15.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-15.mp3" controls></audio>|
+|australian-woman|<audio src="/file/gradio/samples/all/out-16.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-16.mp3" controls></audio>|
+|bass|<audio src="/file/gradio/samples/all/out-17.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-17.mp3" controls></audio>|
+|beaker-nerd|<audio src="/file/gradio/samples/all/out-18.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-18.mp3" controls></audio>|
+|bernie-sanders|<audio src="/file/gradio/samples/all/out-19.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-19.mp3" controls></audio>|
+|biden|<audio src="/file/gradio/samples/all/out-20.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-20.mp3" controls></audio>|
+|biden-2|<audio src="/file/gradio/samples/all/out-21.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-21.mp3" controls></audio>|
+|billy-madison|<audio src="/file/gradio/samples/all/out-22.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-22.mp3" controls></audio>|
+|birmingham-man|<audio src="/file/gradio/samples/all/out-23.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-23.mp3" controls></audio>|
+|birmingham-whisper|<audio src="/file/gradio/samples/all/out-24.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-24.mp3" controls></audio>|
+|birmingham-woman|<audio src="/file/gradio/samples/all/out-25.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-25.mp3" controls></audio>|
+|bodett|<audio src="/file/gradio/samples/all/out-26.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-26.mp3" controls></audio>|
+|boring-british-man|<audio src="/file/gradio/samples/all/out-27.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-27.mp3" controls></audio>|
+|boxing-announcer|<audio src="/file/gradio/samples/all/out-28.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-28.mp3" controls></audio>|
+|boxing-ring-announcer|<audio src="/file/gradio/samples/all/out-29.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-29.mp3" controls></audio>|
+|british|<audio src="/file/gradio/samples/all/out-30.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-30.mp3" controls></audio>|
+|british-woman|<audio src="/file/gradio/samples/all/out-31.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-31.mp3" controls></audio>|
+|british-woman-2|<audio src="/file/gradio/samples/all/out-32.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-32.mp3" controls></audio>|
+|britisharisto|<audio src="/file/gradio/samples/all/out-33.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-33.mp3" controls></audio>|
+|canadian-male|<audio src="/file/gradio/samples/all/out-34.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-34.mp3" controls></audio>|
+|carribean-female|<audio src="/file/gradio/samples/all/out-35.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-35.mp3" controls></audio>|
+|chicken|<audio src="/file/gradio/samples/all/out-36.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-36.mp3" controls></audio>|
+|child|<audio src="/file/gradio/samples/all/out-37.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-37.mp3" controls></audio>|
+|chinese-male|<audio src="/file/gradio/samples/all/out-38.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-38.mp3" controls></audio>|
+|christopher-walken|<audio src="/file/gradio/samples/all/out-39.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-39.mp3" controls></audio>|
+|clint-eastwood|<audio src="/file/gradio/samples/all/out-40.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-40.mp3" controls></audio>|
+|cockney-whisper|<audio src="/file/gradio/samples/all/out-41.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-41.mp3" controls></audio>|
+|cod-soldier|<audio src="/file/gradio/samples/all/out-42.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-42.mp3" controls></audio>|
+|country-dog|<audio src="/file/gradio/samples/all/out-43.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-43.mp3" controls></audio>|
+|cow|<audio src="/file/gradio/samples/all/out-44.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-44.mp3" controls></audio>|
+|cow-2|<audio src="/file/gradio/samples/all/out-45.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-45.mp3" controls></audio>|
+|cranky-old-man|<audio src="/file/gradio/samples/all/out-46.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-46.mp3" controls></audio>|
+|crazy-russian-male|<audio src="/file/gradio/samples/all/out-47.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-47.mp3" controls></audio>|
+|crone|<audio src="/file/gradio/samples/all/out-48.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-48.mp3" controls></audio>|
+|czech-female|<audio src="/file/gradio/samples/all/out-49.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-49.mp3" controls></audio>|
+|czech-female-2|<audio src="/file/gradio/samples/all/out-50.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-50.mp3" controls></audio>|
+|dame-edna|<audio src="/file/gradio/samples/all/out-51.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-51.mp3" controls></audio>|
+|david-attenborough|<audio src="/file/gradio/samples/all/out-52.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-52.mp3" controls></audio>|
+|deep-american|<audio src="/file/gradio/samples/all/out-53.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-53.mp3" controls></audio>|
+|deep-baritone|<audio src="/file/gradio/samples/all/out-54.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-54.mp3" controls></audio>|
+|deep-baritone-male|<audio src="/file/gradio/samples/all/out-55.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-55.mp3" controls></audio>|
+|deep-english|<audio src="/file/gradio/samples/all/out-56.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-56.mp3" controls></audio>|
+|deep-gravelly|<audio src="/file/gradio/samples/all/out-57.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-57.mp3" controls></audio>|
+|deep-gravelly-2|<audio src="/file/gradio/samples/all/out-58.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-58.mp3" controls></audio>|
+|deep-male|<audio src="/file/gradio/samples/all/out-59.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-59.mp3" controls></audio>|
+|default|<audio src="/file/gradio/samples/all/out-60.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-60.mp3" controls></audio>|
+|dick-vitale-2|<audio src="/file/gradio/samples/all/out-61.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-61.mp3" controls></audio>|
+|dickyv|<audio src="/file/gradio/samples/all/out-62.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-62.mp3" controls></audio>|
+|dog|<audio src="/file/gradio/samples/all/out-63.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-63.mp3" controls></audio>|
+|dracula|<audio src="/file/gradio/samples/all/out-64.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-64.mp3" controls></audio>|
+|drag-queen|<audio src="/file/gradio/samples/all/out-65.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-65.mp3" controls></audio>|
+|drill-sergeant|<audio src="/file/gradio/samples/all/out-66.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-66.mp3" controls></audio>|
+|dutch-female|<audio src="/file/gradio/samples/all/out-67.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-67.mp3" controls></audio>|
+|dutch-male|<audio src="/file/gradio/samples/all/out-68.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-68.mp3" controls></audio>|
+|east-african-female|<audio src="/file/gradio/samples/all/out-69.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-69.mp3" controls></audio>|
+|eddie-eagle|<audio src="/file/gradio/samples/all/out-70.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-70.mp3" controls></audio>|
+|english-football-announcer|<audio src="/file/gradio/samples/all/out-71.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-71.mp3" controls></audio>|
+|english-sports-announcer|<audio src="/file/gradio/samples/all/out-72.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-72.mp3" controls></audio>|
+|eugene-levy|<audio src="/file/gradio/samples/all/out-73.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-73.mp3" controls></audio>|
+|evil-russian-male|<audio src="/file/gradio/samples/all/out-74.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-74.mp3" controls></audio>|
+|excited-beaker-nerd|<audio src="/file/gradio/samples/all/out-75.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-75.mp3" controls></audio>|
+|excited-gravel|<audio src="/file/gradio/samples/all/out-76.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-76.mp3" controls></audio>|
+|excited-nerd|<audio src="/file/gradio/samples/all/out-77.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-77.mp3" controls></audio>|
+|excited-teen-boy|<audio src="/file/gradio/samples/all/out-78.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-78.mp3" controls></audio>|
+|excited-woman|<audio src="/file/gradio/samples/all/out-79.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-79.mp3" controls></audio>|
+|female-boston|<audio src="/file/gradio/samples/all/out-80.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-80.mp3" controls></audio>|
+|female-brazilian|<audio src="/file/gradio/samples/all/out-81.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-81.mp3" controls></audio>|
+|female-cat|<audio src="/file/gradio/samples/all/out-82.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-82.mp3" controls></audio>|
+|fluttershy|<audio src="/file/gradio/samples/all/out-83.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-83.mp3" controls></audio>|
+|fozzy|<audio src="/file/gradio/samples/all/out-84.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-84.mp3" controls></audio>|
+|french-aristocrat|<audio src="/file/gradio/samples/all/out-85.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-85.mp3" controls></audio>|
+|french-female|<audio src="/file/gradio/samples/all/out-86.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-86.mp3" controls></audio>|
+|french-male|<audio src="/file/gradio/samples/all/out-87.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-87.mp3" controls></audio>|
+|french-male-2|<audio src="/file/gradio/samples/all/out-88.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-88.mp3" controls></audio>|
+|george-w-bush|<audio src="/file/gradio/samples/all/out-89.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-89.mp3" controls></audio>|
+|german-female|<audio src="/file/gradio/samples/all/out-90.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-90.mp3" controls></audio>|
+|german-female-2|<audio src="/file/gradio/samples/all/out-91.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-91.mp3" controls></audio>|
+|german-female-3|<audio src="/file/gradio/samples/all/out-92.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-92.mp3" controls></audio>|
+|german-guy|<audio src="/file/gradio/samples/all/out-93.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-93.mp3" controls></audio>|
+|german-woman|<audio src="/file/gradio/samples/all/out-94.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-94.mp3" controls></audio>|
+|gollum|<audio src="/file/gradio/samples/all/out-95.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-95.mp3" controls></audio>|
+|gollum-2|<audio src="/file/gradio/samples/all/out-96.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-96.mp3" controls></audio>|
+|gravely-cowboy|<audio src="/file/gradio/samples/all/out-97.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-97.mp3" controls></audio>|
+|greek-female|<audio src="/file/gradio/samples/all/out-98.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-98.mp3" controls></audio>|
+|gruff-english-soldier-2|<audio src="/file/gradio/samples/all/out-99.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-99.mp3" controls></audio>|
+|gruff-soldier|<audio src="/file/gradio/samples/all/out-100.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-100.mp3" controls></audio>|
+|highclass-british|<audio src="/file/gradio/samples/all/out-101.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-101.mp3" controls></audio>|
+|highclass-british-whisper|<audio src="/file/gradio/samples/all/out-102.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-102.mp3" controls></audio>|
+|hillary|<audio src="/file/gradio/samples/all/out-103.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-103.mp3" controls></audio>|
+|hillbilly-woman|<audio src="/file/gradio/samples/all/out-104.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-104.mp3" controls></audio>|
+|homer|<audio src="/file/gradio/samples/all/out-105.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-105.mp3" controls></audio>|
+|horse|<audio src="/file/gradio/samples/all/out-106.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-106.mp3" controls></audio>|
+|indian-female|<audio src="/file/gradio/samples/all/out-107.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-107.mp3" controls></audio>|
+|indian-male|<audio src="/file/gradio/samples/all/out-108.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-108.mp3" controls></audio>|
+|indian-male-2|<audio src="/file/gradio/samples/all/out-109.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-109.mp3" controls></audio>|
+|indonesian-female|<audio src="/file/gradio/samples/all/out-110.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-110.mp3" controls></audio>|
+|irish-female|<audio src="/file/gradio/samples/all/out-111.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-111.mp3" controls></audio>|
+|irish-sports-announcer|<audio src="/file/gradio/samples/all/out-112.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-112.mp3" controls></audio>|
+|irish-whisper|<audio src="/file/gradio/samples/all/out-113.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-113.mp3" controls></audio>|
+|italian-female|<audio src="/file/gradio/samples/all/out-114.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-114.mp3" controls></audio>|
+|italian-male|<audio src="/file/gradio/samples/all/out-115.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-115.mp3" controls></audio>|
+|italian-male-2|<audio src="/file/gradio/samples/all/out-116.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-116.mp3" controls></audio>|
+|jack-sparrow|<audio src="/file/gradio/samples/all/out-117.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-117.mp3" controls></audio>|
+|jamaican-female|<audio src="/file/gradio/samples/all/out-118.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-118.mp3" controls></audio>|
+|jamaican-male|<audio src="/file/gradio/samples/all/out-119.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-119.mp3" controls></audio>|
+|james-bond|<audio src="/file/gradio/samples/all/out-120.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-120.mp3" controls></audio>|
+|james-earl-jones|<audio src="/file/gradio/samples/all/out-121.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-121.mp3" controls></audio>|
+|james-earl-jones-2|<audio src="/file/gradio/samples/all/out-122.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-122.mp3" controls></audio>|
+|japanese-woman|<audio src="/file/gradio/samples/all/out-123.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-123.mp3" controls></audio>|
+|jason-statham|<audio src="/file/gradio/samples/all/out-124.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-124.mp3" controls></audio>|
+|jej|<audio src="/file/gradio/samples/all/out-125.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-125.mp3" controls></audio>|
+|joe-swanson|<audio src="/file/gradio/samples/all/out-126.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-126.mp3" controls></audio>|
+|julia-childs|<audio src="/file/gradio/samples/all/out-127.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-127.mp3" controls></audio>|
+|karen|<audio src="/file/gradio/samples/all/out-128.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-128.mp3" controls></audio>|
+|kenyan-male|<audio src="/file/gradio/samples/all/out-129.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-129.mp3" controls></audio>|
+|kermit|<audio src="/file/gradio/samples/all/out-130.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-130.mp3" controls></audio>|
+|kildare-male|<audio src="/file/gradio/samples/all/out-131.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-131.mp3" controls></audio>|
+|kindly-old-man|<audio src="/file/gradio/samples/all/out-132.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-132.mp3" controls></audio>|
+|korean-woman|<audio src="/file/gradio/samples/all/out-133.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-133.mp3" controls></audio>|
+|krusty-the-clown|<audio src="/file/gradio/samples/all/out-134.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-134.mp3" controls></audio>|
+|lisp|<audio src="/file/gradio/samples/all/out-135.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-135.mp3" controls></audio>|
+|madmax|<audio src="/file/gradio/samples/all/out-136.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-136.mp3" controls></audio>|
+|male-cat|<audio src="/file/gradio/samples/all/out-137.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-137.mp3" controls></audio>|
+|male-mexican|<audio src="/file/gradio/samples/all/out-138.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-138.mp3" controls></audio>|
+|mandarin-woman|<audio src="/file/gradio/samples/all/out-139.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-139.mp3" controls></audio>|
+|marge-simpson|<audio src="/file/gradio/samples/all/out-140.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-140.mp3" controls></audio>|
+|mario-sarah|<audio src="/file/gradio/samples/all/out-141.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-141.mp3" controls></audio>|
+|mark-wahlberg|<audio src="/file/gradio/samples/all/out-142.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-142.mp3" controls></audio>|
+|marvin-the-martian|<audio src="/file/gradio/samples/all/out-143.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-143.mp3" controls></audio>|
+|matt-angry|<audio src="/file/gradio/samples/all/out-144.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-144.mp3" controls></audio>|
+|matt-drunk|<audio src="/file/gradio/samples/all/out-145.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-145.mp3" controls></audio>|
+|matt-sad|<audio src="/file/gradio/samples/all/out-146.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-146.mp3" controls></audio>|
+|meditation|<audio src="/file/gradio/samples/all/out-147.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-147.mp3" controls></audio>|
+|medium-dog|<audio src="/file/gradio/samples/all/out-148.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-148.mp3" controls></audio>|
+|mexican-female|<audio src="/file/gradio/samples/all/out-149.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-149.mp3" controls></audio>|
+|nancy-pelosi|<audio src="/file/gradio/samples/all/out-150.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-150.mp3" controls></audio>|
+|nasal|<audio src="/file/gradio/samples/all/out-151.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-151.mp3" controls></audio>|
+|nasally|<audio src="/file/gradio/samples/all/out-152.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-152.mp3" controls></audio>|
+|nerd|<audio src="/file/gradio/samples/all/out-153.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-153.mp3" controls></audio>|
+|nerd-woman|<audio src="/file/gradio/samples/all/out-154.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-154.mp3" controls></audio>|
+|neutral-female|<audio src="/file/gradio/samples/all/out-155.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-155.mp3" controls></audio>|
+|new-york-woman|<audio src="/file/gradio/samples/all/out-156.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-156.mp3" controls></audio>|
+|new-zealand-male|<audio src="/file/gradio/samples/all/out-157.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-157.mp3" controls></audio>|
+|nigel-frasier|<audio src="/file/gradio/samples/all/out-158.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-158.mp3" controls></audio>|
+|nigerian-man|<audio src="/file/gradio/samples/all/out-159.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-159.mp3" controls></audio>|
+|nigerian-woman|<audio src="/file/gradio/samples/all/out-160.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-160.mp3" controls></audio>|
+|northcountry|<audio src="/file/gradio/samples/all/out-161.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-161.mp3" controls></audio>|
+|norwegian-male|<audio src="/file/gradio/samples/all/out-162.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-162.mp3" controls></audio>|
+|obama|<audio src="/file/gradio/samples/all/out-163.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-163.mp3" controls></audio>|
+|obama-2|<audio src="/file/gradio/samples/all/out-164.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-164.mp3" controls></audio>|
+|old-british-woman|<audio src="/file/gradio/samples/all/out-165.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-165.mp3" controls></audio>|
+|old-man|<audio src="/file/gradio/samples/all/out-166.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-166.mp3" controls></audio>|
+|old-woman|<audio src="/file/gradio/samples/all/out-167.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-167.mp3" controls></audio>|
+|orc-male|<audio src="/file/gradio/samples/all/out-168.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-168.mp3" controls></audio>|
+|owen-wilson|<audio src="/file/gradio/samples/all/out-169.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-169.mp3" controls></audio>|
+|patrick|<audio src="/file/gradio/samples/all/out-170.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-170.mp3" controls></audio>|
+|peter-griffin|<audio src="/file/gradio/samples/all/out-171.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-171.mp3" controls></audio>|
+|portuguese-female|<audio src="/file/gradio/samples/all/out-172.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-172.mp3" controls></audio>|
+|portuguese-male|<audio src="/file/gradio/samples/all/out-173.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-173.mp3" controls></audio>|
+|prieto|<audio src="/file/gradio/samples/all/out-174.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-174.mp3" controls></audio>|
+|prince-charles|<audio src="/file/gradio/samples/all/out-175.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-175.mp3" controls></audio>|
+|pushy|<audio src="/file/gradio/samples/all/out-176.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-176.mp3" controls></audio>|
+|quiet-gruff|<audio src="/file/gradio/samples/all/out-177.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-177.mp3" controls></audio>|
+|really-nasal|<audio src="/file/gradio/samples/all/out-178.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-178.mp3" controls></audio>|
+|robot-female|<audio src="/file/gradio/samples/all/out-179.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-179.mp3" controls></audio>|
+|robot-female-2|<audio src="/file/gradio/samples/all/out-180.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-180.mp3" controls></audio>|
+|ropp-v2|<audio src="/file/gradio/samples/all/out-181.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-181.mp3" controls></audio>|
+|russian-female|<audio src="/file/gradio/samples/all/out-182.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-182.mp3" controls></audio>|
+|russian-femme-fatale|<audio src="/file/gradio/samples/all/out-183.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-183.mp3" controls></audio>|
+|russian-male|<audio src="/file/gradio/samples/all/out-184.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-184.mp3" controls></audio>|
+|russian-male-2|<audio src="/file/gradio/samples/all/out-185.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-185.mp3" controls></audio>|
+|sam-elliot|<audio src="/file/gradio/samples/all/out-186.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-186.mp3" controls></audio>|
+|sam-elliot-2|<audio src="/file/gradio/samples/all/out-187.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-187.mp3" controls></audio>|
+|santa|<audio src="/file/gradio/samples/all/out-188.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-188.mp3" controls></audio>|
+|saudi-male|<audio src="/file/gradio/samples/all/out-189.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-189.mp3" controls></audio>|
+|scottish-female|<audio src="/file/gradio/samples/all/out-190.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-190.mp3" controls></audio>|
+|scottish-male|<audio src="/file/gradio/samples/all/out-191.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-191.mp3" controls></audio>|
+|scottish-woman-whisper|<audio src="/file/gradio/samples/all/out-192.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-192.mp3" controls></audio>|
+|sean-connery|<audio src="/file/gradio/samples/all/out-193.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-193.mp3" controls></audio>|
+|smoker|<audio src="/file/gradio/samples/all/out-194.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-194.mp3" controls></audio>|
+|snake|<audio src="/file/gradio/samples/all/out-195.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-195.mp3" controls></audio>|
+|sofia|<audio src="/file/gradio/samples/all/out-196.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-196.mp3" controls></audio>|
+|soldier|<audio src="/file/gradio/samples/all/out-197.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-197.mp3" controls></audio>|
+|south-african|<audio src="/file/gradio/samples/all/out-198.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-198.mp3" controls></audio>|
+|south-african-male-2|<audio src="/file/gradio/samples/all/out-199.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-199.mp3" controls></audio>|
+|south-african-woman|<audio src="/file/gradio/samples/all/out-200.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-200.mp3" controls></audio>|
+|south-irish|<audio src="/file/gradio/samples/all/out-201.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-201.mp3" controls></audio>|
+|southern-belle|<audio src="/file/gradio/samples/all/out-202.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-202.mp3" controls></audio>|
+|southern-drawl|<audio src="/file/gradio/samples/all/out-203.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-203.mp3" controls></audio>|
+|southern-grandpa|<audio src="/file/gradio/samples/all/out-204.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-204.mp3" controls></audio>|
+|southern-uptalk|<audio src="/file/gradio/samples/all/out-205.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-205.mp3" controls></audio>|
+|spongebob|<audio src="/file/gradio/samples/all/out-206.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-206.mp3" controls></audio>|
+|sports-announcer|<audio src="/file/gradio/samples/all/out-207.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-207.mp3" controls></audio>|
+|sports-announcer-2|<audio src="/file/gradio/samples/all/out-208.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-208.mp3" controls></audio>|
+|staff-elizabeth|<audio src="/file/gradio/samples/all/out-209.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-209.mp3" controls></audio>|
+|staff-josh|<audio src="/file/gradio/samples/all/out-210.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-210.mp3" controls></audio>|
+|staff-noel|<audio src="/file/gradio/samples/all/out-211.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-211.mp3" controls></audio>|
+|staff-shelby1|<audio src="/file/gradio/samples/all/out-212.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-212.mp3" controls></audio>|
+|staff-timmy|<audio src="/file/gradio/samples/all/out-213.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-213.mp3" controls></audio>|
+|staff-will|<audio src="/file/gradio/samples/all/out-214.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-214.mp3" controls></audio>|
+|stewie|<audio src="/file/gradio/samples/all/out-215.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-215.mp3" controls></audio>|
+|surfer|<audio src="/file/gradio/samples/all/out-216.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-216.mp3" controls></audio>|
+|swedish-female|<audio src="/file/gradio/samples/all/out-217.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-217.mp3" controls></audio>|
+|swedish-male|<audio src="/file/gradio/samples/all/out-218.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-218.mp3" controls></audio>|
+|tatum|<audio src="/file/gradio/samples/all/out-219.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-219.mp3" controls></audio>|
+|teen-girl|<audio src="/file/gradio/samples/all/out-220.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-220.mp3" controls></audio>|
+|texas-male|<audio src="/file/gradio/samples/all/out-221.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-221.mp3" controls></audio>|
+|the-queen|<audio src="/file/gradio/samples/all/out-222.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-222.mp3" controls></audio>|
+|tiny-dog|<audio src="/file/gradio/samples/all/out-223.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-223.mp3" controls></audio>|
+|transatlantic-reporter|<audio src="/file/gradio/samples/all/out-224.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-224.mp3" controls></audio>|
+|trucker|<audio src="/file/gradio/samples/all/out-225.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-225.mp3" controls></audio>|
+|trump|<audio src="/file/gradio/samples/all/out-226.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-226.mp3" controls></audio>|
+|trump-2|<audio src="/file/gradio/samples/all/out-227.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-227.mp3" controls></audio>|
+|trump-3|<audio src="/file/gradio/samples/all/out-228.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-228.mp3" controls></audio>|
+|trump-4|<audio src="/file/gradio/samples/all/out-229.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-229.mp3" controls></audio>|
+|trump-5|<audio src="/file/gradio/samples/all/out-230.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-230.mp3" controls></audio>|
+|tsundere|<audio src="/file/gradio/samples/all/out-231.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-231.mp3" controls></audio>|
+|ugandan-male|<audio src="/file/gradio/samples/all/out-232.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-232.mp3" controls></audio>|
+|ukranian-female|<audio src="/file/gradio/samples/all/out-233.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-233.mp3" controls></audio>|
+|ukranian-female-2|<audio src="/file/gradio/samples/all/out-234.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-234.mp3" controls></audio>|
+|ukranian-male|<audio src="/file/gradio/samples/all/out-235.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-235.mp3" controls></audio>|
+|ukranian-male-2|<audio src="/file/gradio/samples/all/out-236.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-236.mp3" controls></audio>|
+|us-female|<audio src="/file/gradio/samples/all/out-237.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-237.mp3" controls></audio>|
+|us-southern-male|<audio src="/file/gradio/samples/all/out-238.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-238.mp3" controls></audio>|
+|valley-girl|<audio src="/file/gradio/samples/all/out-239.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-239.mp3" controls></audio>|
+|venom|<audio src="/file/gradio/samples/all/out-240.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-240.mp3" controls></audio>|
+|viking|<audio src="/file/gradio/samples/all/out-241.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-241.mp3" controls></audio>|
+|vocal-fry-woman|<audio src="/file/gradio/samples/all/out-242.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-242.mp3" controls></audio>|
+|warm-british-woman|<audio src="/file/gradio/samples/all/out-243.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-243.mp3" controls></audio>|
+|west-country-british-male|<audio src="/file/gradio/samples/all/out-244.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-244.mp3" controls></audio>|
+|western-male|<audio src="/file/gradio/samples/all/out-245.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-245.mp3" controls></audio>|
+|whisper|<audio src="/file/gradio/samples/all/out-246.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-246.mp3" controls></audio>|
+|whisper-man|<audio src="/file/gradio/samples/all/out-247.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-247.mp3" controls></audio>|
+|whispering-woman|<audio src="/file/gradio/samples/all/out-248.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-248.mp3" controls></audio>|
+|wicked-witch|<audio src="/file/gradio/samples/all/out-249.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-249.mp3" controls></audio>|
+|willsmith|<audio src="/file/gradio/samples/all/out-250.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-250.mp3" controls></audio>|
+|wizard|<audio src="/file/gradio/samples/all/out-251.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-251.mp3" controls></audio>|
+|woman-announcer|<audio src="/file/gradio/samples/all/out-252.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-252.mp3" controls></audio>|
+|woman-sultry|<audio src="/file/gradio/samples/all/out-253.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-253.mp3" controls></audio>|
+|wrestling-announcer|<audio src="/file/gradio/samples/all/out-254.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-254.mp3" controls></audio>|
+|yoda|<audio src="/file/gradio/samples/all/out-255.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-255.mp3" controls></audio>|
+|yorkshire-female|<audio src="/file/gradio/samples/all/out-256.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-256.mp3" controls></audio>|
+|yorkshire-man|<audio src="/file/gradio/samples/all/out-257.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-257.mp3" controls></audio>|
+|young-androgynous-female|<audio src="/file/gradio/samples/all/out-258.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-258.mp3" controls></audio>|
+|young-girl|<audio src="/file/gradio/samples/all/out-259.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-259.mp3" controls></audio>|
+|young-girl-2|<audio src="/file/gradio/samples/all/out-260.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-260.mp3" controls></audio>|
+|zambian-female|<audio src="/file/gradio/samples/all/out-261.mp3" controls></audio>|<audio src="/file/gradio/samples/all/ref-261.mp3" controls></audio>|
