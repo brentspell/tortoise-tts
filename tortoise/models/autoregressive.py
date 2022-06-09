@@ -6,7 +6,7 @@ import torch.nn.functional as F
 from transformers import GPT2Config, GPT2PreTrainedModel, LogitsProcessorList
 from transformers.modeling_outputs import CausalLMOutputWithCrossAttentions
 from transformers.utils.model_parallel_utils import get_device_map, assert_device_map
-from tortoise.models.arch_util import AttentionBlock
+from tortoise.models.arch_util import AttentionBlock, checkpoint
 from tortoise.utils.typical_sampling import TypicalLogitsWarper
 
 
@@ -206,7 +206,7 @@ class ConditioningEncoder(nn.Module):
 
     def forward(self, x):
         h = self.init(x)
-        h = self.attn(h)
+        h = checkpoint(self.attn, h)
         if self.mean:
             return h.mean(dim=2)
         else:
@@ -239,9 +239,10 @@ def build_hf_gpt_transformer(layers, model_dim, heads, max_mel_seq_len, max_text
                              n_embd=model_dim,
                              n_layer=layers,
                              n_head=heads,
-                             gradient_checkpointing=checkpointing,
                              use_cache=not checkpointing)
     gpt = GPT2Model(gpt_config)
+    if checkpointing:
+        gpt.gradient_checkpointing_enable()
     # Override the built in positional embeddings
     del gpt.wpe
     gpt.wpe = functools.partial(null_position_embeddings, dim=model_dim)
@@ -423,7 +424,7 @@ class UnifiedVoice(nn.Module):
             # chopping the inputs by the maximum actual length.
             max_text_len = text_lengths.max()
             text_inputs = text_inputs[:, :max_text_len]
-            max_mel_len = wav_lengths.max() // self.mel_length_compression
+            max_mel_len = torch.div(wav_lengths.max(), self.mel_length_compression, rounding_mode="floor")
             mel_codes = mel_codes[:, :max_mel_len]
             if raw_mels is not None:
                 raw_mels = raw_mels[:, :, :max_mel_len*4]

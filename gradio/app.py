@@ -11,45 +11,31 @@ import torch
 
 from tortoise import api
 
-REF_DB = -6
-
 ROOT = Path("/var/pylon/data/speech/tts")
 SPEAKER_PATHS = {
-    k: v
-    for k, v in {
-        **{
-            p.name: p
-            for p in sorted((ROOT).glob("*"))
-            if p.name in {
-                "alexa", "bodett", "jej", "prieto",
-                "ropp-v2", "tatum", "willsmith"
-            }
-        },
-        **{p.name: p for p in sorted((ROOT / "warble").glob("*"))}
-    }.items()
-    if len(list(v.glob("wavs/*"))) >= 10
+    p.name: p for p in sorted((ROOT / "warble").glob("*")) if p.is_dir()
 }
 REFERENCE_COUNT = 10
 REFERENCE_FS = 22050
 OUTPUT_FS = 24000
 
-g_tts = None
+g_tortoise = None
 
 
 def synth(speed, speaker, text):
-    global g_tts
-    if g_tts is None:
-        g_tts = api.TextToSpeech()
-        g_tts.autoregressive.load_state_dict(torch.load(".models/ar-ukranian-male.pth"))
+    global g_tortoise
+    if g_tortoise is None:
+        g_tortoise = api.TextToSpeech()
+        g_tortoise.autoregressive.load_state_dict(torch.load(".models/ar-warble.pth"))
 
     ref_paths = random.sample(
         [str(p) for p in SPEAKER_PATHS[speaker].glob("wavs/*")],
         REFERENCE_COUNT,
     )
-    refs = [librosa.core.load(p, sr=REFERENCE_FS)[0] for p in ref_paths]
+    refs = [normalize(librosa.core.load(p, sr=REFERENCE_FS)[0], REFERENCE_FS) for p in ref_paths]
 
     with torch.no_grad():
-        audio = g_tts.tts_with_preset(
+        audio = g_tortoise.tts_with_preset(
             text=text,
             voice_samples=[
                 torch.FloatTensor(r).unsqueeze(0)
@@ -59,14 +45,18 @@ def synth(speed, speaker, text):
             clvp_cvvp_slider=0.001,
         ).squeeze(0).squeeze(0).cpu().numpy()
 
-    audio = (audio * 10**(REF_DB/20) / (np.max(np.abs(audio)) + 1e-5) * 32767).astype(np.int16)
-
-    refs = [
-        (r * 10**(REF_DB/20) / (np.max(np.abs(r)) + 1e-5) * 32767).astype(np.int16)
-        for r in refs
-    ]
+    audio = (normalize(audio, OUTPUT_FS) * 32767).astype(np.int16)
+    refs = [(r * 32767).astype(np.int16) for r in refs]
 
     return [(OUTPUT_FS, audio)] + [(REFERENCE_FS, r) for r in refs]
+
+
+def normalize(audio, fs, ref_db=-18, block_size=0.4, block_overlap=0.75):
+    frame_length = int(block_size * fs)
+    frame_stride = int((1 - block_overlap) * frame_length)
+    frames = torch.tensor(audio).unfold(-1, size=frame_length, step=frame_stride)
+    power = frames.square().mean(dim=1).sqrt().max().item()
+    return np.clip(audio * (10**(ref_db / 20) / max(power, 1e-5)), -1, 1)
 
 
 gradio.Interface(
@@ -79,7 +69,7 @@ gradio.Interface(
         gradio.inputs.Dropdown(
             ["ultra_fast", "fast", "standard", "high_quality"],
             label="Speed",
-            default="standard"
+            default="fast"
         ),
         gradio.inputs.Dropdown(
             list(SPEAKER_PATHS.keys()),
