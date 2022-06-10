@@ -7,6 +7,7 @@ import typing as T
 import warnings
 from collections import defaultdict
 from pathlib import Path
+os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
 os.environ["CUDA_VISIBLE_DEVICES"] = ",".join(str(i) for i in range(8))
 os.environ['MASTER_ADDR'] = 'localhost'
 os.environ['MASTER_PORT'] = '12355'
