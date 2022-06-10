@@ -76,7 +76,7 @@ def main():
                                     continue
                                 chapter_reader = chapter_readers[0].get("href").split("/")[-1]
                                 chapter_file = cols[0].select_one("a").get("href").split("/")[-1]
-                                if not (Path(zipdir) / chapter_file).exists():
+                                if not (Path(zipdir) / chapter_file).is_file():
                                     print("bad chapter", book["id"], chapter_file)
                                     continue
                                 with audioread.audio_open(Path(zipdir) / chapter_file) as input_audio:
