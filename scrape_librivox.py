@@ -10,9 +10,9 @@ import zipfile
 import zlib
 from pathlib import Path
 
-import audioread
 import numpy as np
 import soundfile
+import streamp3
 from bs4 import BeautifulSoup
 from IPython.display import Audio, clear_output, display
 from tqdm import tqdm
@@ -32,7 +32,7 @@ def main():
     )
     args = parser.parse_args()
 
-    offset = 2000
+    offset = 0
     count = offset
     duration = 0
     done = {p.name for p in Path("/d/data/librivox").glob("*/*")}
@@ -79,13 +79,14 @@ def main():
                                 if not (Path(zipdir) / chapter_file).is_file():
                                     print("bad chapter", book["id"], chapter_file)
                                     continue
-                                with audioread.audio_open(Path(zipdir) / chapter_file) as input_audio:
-                                    if input_audio.samplerate < 22050:
+                                with (Path(zipdir) / chapter_file).open("rb") as audio_file:
+                                    decoder = streamp3.MP3Decoder(audio_file)
+                                    if decoder.sample_rate < 22050:
                                         continue
-                                    chapter_audio = (np.frombuffer(b''.join(input_audio), dtype=np.int16).astype(np.float32) / 32767).reshape([-1, input_audio.channels]).sum(-1)
+                                    chapter_audio = (np.frombuffer(b''.join(decoder), dtype=np.int16).astype(np.float32) / 32767).reshape([-1, decoder.num_channels]).sum(-1)
                                     if len(chapter_audio) == 0:
                                         continue
-                                    chapter_audio = torchaudio.functional.resample(torch.from_numpy(chapter_audio), input_audio.samplerate, 24000).numpy()
+                                    chapter_audio = torchaudio.functional.resample(torch.from_numpy(chapter_audio), decoder.sample_rate, 24000).numpy()
                                     chapter_audio = (np.clip(chapter_audio, -1, 1) * 32767).astype(np.int16)
                                     output_audio.write(chapter_audio)
 
