@@ -49,6 +49,11 @@ def normalize(audio, fs, ref_db=-18, block_size=0.4, block_overlap=0.75):
     return audio * (10**(ref_db / 20) / max(power, 1e-5))
 
 
+def grad_norm(model: torch.nn.Module) -> torch.Tensor:
+    norms = [v.grad.detach().norm(2) for v in model.parameters() if v.grad is not None]
+    return torch.stack(norms).square().sum().sqrt()
+
+
 SAMPLE_RATE = 22050
 COND_LENGTH = 6 * SAMPLE_RATE
 
@@ -222,6 +227,7 @@ def train(rank, world):
         param_count = sum(np.prod(p.shape) for p in model.parameters())
 
         gradient_accum = BATCH_SIZE // MICROBATCH_SIZE // torch.cuda.device_count()
+        grad_norm_ = 0
         for epoch in tqdm(range(EPOCHS)):
             sampler.set_epoch(epoch)
             for batch_index, batch in enumerate(pbar := tqdm(loader, disable=rank != 0)):
@@ -251,11 +257,13 @@ def train(rank, world):
 
                 if do_optim:
                     optimizer.step()
+                    grad_norm_ = grad_norm(model)
                     optimizer.zero_grad()
 
                 pbar.set_postfix(
                     text_loss=float(text_loss.mean()),
                     mel_loss=float(mel_loss.mean()),
+                    grad=float(grad_norm_),
                     params=f"{param_count // 1e6}M",
                     memory=f"{memory / 2**30:0.2f}GB",
                 )
