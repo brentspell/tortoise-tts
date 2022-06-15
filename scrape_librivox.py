@@ -32,7 +32,7 @@ def main():
     )
     args = parser.parse_args()
 
-    offset = 0
+    offset = 8000
     count = offset
     duration = 0
     done = {p.name for p in Path("/d/data/librivox").glob("*/*")}
@@ -48,7 +48,8 @@ def main():
                 raise
 
             for book in tqdm(books_data["books"], leave=False):
-                if book["id"] not in done and book["language"] == "English" and zlib.crc32(book["id"].encode("utf-8")) % args.part_count == args.part_offset:
+                if book["id"] not in done and int(book["id"]) > 11000 and book["language"] == "English" and zlib.crc32(book["id"].encode("utf-8")) % args.part_count == args.part_offset:
+                    done.add(book["id"])
                     pbar.set_postfix(id=book["id"], url=book["url_zip_file"])
                     count += 1
                     duration += book["totaltimesecs"]
@@ -59,7 +60,7 @@ def main():
                     with tempfile.TemporaryDirectory() as zipdir, tempfile.TemporaryDirectory() as outdir, soundfile.SoundFile(Path(outdir) / "audio.wav", "w", samplerate=24000, channels=1) as output_audio:
                         if book["url_zip_file"]:
                             with tqdm(unit="B", unit_scale=True, unit_divisor=1000, leave=False, desc="downloading") as pbar2:
-                                filename, _headers = urllib.request.urlretrieve(book["url_zip_file"], reporthook=lambda chunk, chunksize, _total: pbar2.update(chunksize))
+                                filename, _headers = urllib.request.urlretrieve(book["url_zip_file"].replace(" ", "%20"), reporthook=lambda chunk, chunksize, _total: pbar2.update(chunksize))
 
                             try:
                                 with zipfile.ZipFile(filename) as zf:
@@ -76,6 +77,7 @@ def main():
                                     continue
                                 chapter_reader = chapter_readers[0].get("href").split("/")[-1]
                                 chapter_file = cols[0].select_one("a").get("href").split("/")[-1]
+                                date = [dt.find_next("dd") for dt in soup.select("dl.product-details dt") if dt.text == "Catalog date:"][0].text
                                 if not (Path(zipdir) / chapter_file).is_file():
                                     print("bad chapter", book["id"], chapter_file)
                                     continue
@@ -90,16 +92,14 @@ def main():
                                     chapter_audio = (np.clip(chapter_audio, -1, 1) * 32767).astype(np.int16)
                                     output_audio.write(chapter_audio)
 
-                                metadata.append((chapter_reader, book_length, len(chapter_audio)))
-                                book_length += len(chapter_audio)
+                                    metadata.append((chapter_reader, book_length, len(chapter_audio), date, decoder.sample_rate, decoder.bit_rate))
+                                    book_length += len(chapter_audio)
 
                         (Path(outdir) / "metadata.csv").write_text("\n".join(",".join(str(c) for c in r) for r in metadata)  + "\n")
 
-                        path = Path(f"/d/data/librivox/{book['id'][0]}")
+                        path = Path(f"/d/data/librivox") / f"{int(book['id']):05d}"[:2]
                         path.mkdir(exist_ok=True, parents=True)
                         shutil.move(outdir, path / f"{book['id']}")
-
-                    done.add(book["id"])
 
             page_count = len(books_data["books"])
             offset += page_count
