@@ -50,7 +50,7 @@ def main():
             for book in tqdm(books_data["books"], leave=False):
                 if book["id"] not in done and int(book["id"]) > 11000 and book["language"] == "English" and zlib.crc32(book["id"].encode("utf-8")) % args.part_count == args.part_offset:
                     done.add(book["id"])
-                    pbar.set_postfix(id=book["id"], url=book["url_zip_file"])
+                    pbar.set_postfix(id=book["id"], url=book["url_librivox"])
                     count += 1
                     duration += book["totaltimesecs"]
 
@@ -58,16 +58,7 @@ def main():
                     metadata = []
 
                     with tempfile.TemporaryDirectory() as zipdir, tempfile.TemporaryDirectory() as outdir, soundfile.SoundFile(Path(outdir) / "audio.wav", "w", samplerate=24000, channels=1) as output_audio:
-                        if book["url_zip_file"]:
-                            with tqdm(unit="B", unit_scale=True, unit_divisor=1000, leave=False, desc="downloading") as pbar2:
-                                filename, _headers = urllib.request.urlretrieve(book["url_zip_file"].replace(" ", "%20"), reporthook=lambda chunk, chunksize, _total: pbar2.update(chunksize))
-
-                            try:
-                                with zipfile.ZipFile(filename) as zf:
-                                    zf.extractall(zipdir)
-                            finally:
-                                Path(filename).unlink()
-
+                        if book["url_librivox"]:
                             with urllib.request.urlopen(book["url_librivox"]) as response:
                                 soup = BeautifulSoup(response.read(), "html.parser")
                             for row in tqdm(soup.body.select("table[class=chapter-download] tbody tr"), leave=False):
@@ -78,22 +69,44 @@ def main():
                                 chapter_reader = chapter_readers[0].get("href").split("/")[-1]
                                 chapter_file = cols[0].select_one("a").get("href").split("/")[-1]
                                 date = [dt.find_next("dd") for dt in soup.select("dl.product-details dt") if dt.text == "Catalog date:"][0].text
-                                if not (Path(zipdir) / chapter_file).is_file():
-                                    print("bad chapter", book["id"], chapter_file)
+                                chapter_url = cols[0].select_one("a").get("href")
+                                if not chapter_url:
                                     continue
-                                with (Path(zipdir) / chapter_file).open("rb") as audio_file:
-                                    decoder = streamp3.MP3Decoder(audio_file)
-                                    if decoder.sample_rate < 22050:
-                                        continue
-                                    chapter_audio = (np.frombuffer(b''.join(decoder), dtype=np.int16).astype(np.float32) / 32767).reshape([-1, decoder.num_channels]).sum(-1)
-                                    if len(chapter_audio) == 0:
-                                        continue
-                                    chapter_audio = torchaudio.functional.resample(torch.from_numpy(chapter_audio), decoder.sample_rate, 24000).numpy()
-                                    chapter_audio = (np.clip(chapter_audio, -1, 1) * 32767).astype(np.int16)
-                                    output_audio.write(chapter_audio)
+                                with tqdm(unit="B", unit_scale=True, unit_divisor=1000, miniters=1048576, leave=False, desc="downloading") as pbar2:
+                                    try:
+                                        filename, _headers = urllib.request.urlretrieve(chapter_url.replace("_64kb.mp3", "_128kb.mp3"), reporthook=lambda chunk, chunksize, _total: pbar2.update(chunksize))
+                                    except urllib.request.HTTPError as e:
+                                        if e.status != 404:
+                                            raise
+                                        print("falling back on no bitrate book")
+                                        try:
+                                            filename, _headers = urllib.request.urlretrieve(chapter_url.replace("_64kb.mp3", ".mp3"), reporthook=lambda chunk, chunksize, _total: pbar2.update(chunksize))
+                                        except urllib.request.HTTPError as e:
+                                            if e.status != 404:
+                                                raise
+                                            print("falling back on 64kbps book")
+                                            try:
+                                                filename, _headers = urllib.request.urlretrieve(chapter_url, reporthook=lambda chunk, chunksize, _total: pbar2.update(chunksize))
+                                            except urllib.request.HTTPError as e:
+                                                if e.status != 404:
+                                                    raise
+                                                continue
+                                try:
+                                    with Path(filename).open("rb") as audio_file:
+                                        decoder = streamp3.MP3Decoder(audio_file)
+                                        if decoder.sample_rate < 22050:
+                                            continue
+                                        chapter_audio = (np.frombuffer(b''.join(decoder), dtype=np.int16).astype(np.float32) / 32767).reshape([-1, decoder.num_channels]).sum(-1)
+                                        if len(chapter_audio) == 0:
+                                            continue
+                                        chapter_audio = torchaudio.functional.resample(torch.from_numpy(chapter_audio), decoder.sample_rate, 24000).numpy()
+                                        chapter_audio = (np.clip(chapter_audio, -1, 1) * 32767).astype(np.int16)
+                                        output_audio.write(chapter_audio)
 
-                                    metadata.append((chapter_reader, book_length, len(chapter_audio), date, decoder.sample_rate, decoder.bit_rate))
-                                    book_length += len(chapter_audio)
+                                        metadata.append((chapter_reader, book_length, len(chapter_audio), date, decoder.sample_rate, decoder.bit_rate))
+                                        book_length += len(chapter_audio)
+                                finally:
+                                    Path(filename).unlink()
 
                         (Path(outdir) / "metadata.csv").write_text("\n".join(",".join(str(c) for c in r) for r in metadata)  + "\n")
 
