@@ -80,7 +80,7 @@ def main():
             print("bad audio type", episode_type, episode_url)
             continue
         try:
-            with tqdm(unit="B", unit_scale=True, unit_divisor=1000, miniters=1048576, desc=f"downloading podcast {podcast_id}, episode {episode_id}") as pbar2:
+            with tqdm(unit="B", unit_scale=True, unit_divisor=1000, mininterval=1, desc=f"downloading podcast {podcast_id}, episode {episode_id}") as pbar2:
                 filename, _headers = urllib.request.urlretrieve(episode_url, reporthook=lambda chunk, chunksize, _total: pbar2.update(chunksize))
         except Exception:
             print("download error")
