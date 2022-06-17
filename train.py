@@ -167,114 +167,111 @@ class Model(torch.nn.Module):
 def train(rank, world):
     torch.cuda.set_device(rank)
     torch.distributed.init_process_group("nccl", rank=rank, world_size=world)
-    try:
-        dataset = Dataset(
-            path="/d/warble-22kHz.hdf5",
-            training=True,
-        )
-        sampler = torch.utils.data.DistributedSampler(
-            dataset,
-            shuffle=True,
-        )
-        loader = torch.utils.data.DataLoader(
-            dataset,
-            batch_size=MICROBATCH_SIZE,
-            collate_fn=Dataset.collate,
-            sampler=sampler,
-            shuffle=False,
-            drop_last=True,
-        )
+    dataset = Dataset(
+        path="/d/warble-22kHz.hdf5",
+        training=True,
+    )
+    sampler = torch.utils.data.DistributedSampler(
+        dataset,
+        shuffle=True,
+    )
+    loader = torch.utils.data.DataLoader(
+        dataset,
+        batch_size=MICROBATCH_SIZE,
+        collate_fn=Dataset.collate,
+        sampler=sampler,
+        shuffle=False,
+        drop_last=True,
+    )
 
-        melspec_xform = tortoise.api.TorchMelSpectrogram().to(rank)
+    melspec_xform = tortoise.api.TorchMelSpectrogram().to(rank)
 
-        dvae = models.audio.tts.lucidrains_dvae.DiscreteVAE(
-            positional_dims=1,
-            num_tokens=8192,
-            codebook_dim=512,
-            num_layers=2,
-            num_resnet_blocks=3,
-            hidden_dim=512,
-            channels=80,
-            stride=2,
-            kernel_size=3,
-            use_transposed_convs=False,
-            encoder_norm=False,
-            activation='relu',
-            smooth_l1_loss=False,
-            straight_through=False,
-            normalization=None,
-            use_lr_quantizer=False,
-            lr_quantizer_args={},
-        ).to(rank)
-        dvae.load_state_dict(torch.load(".models/dvae.pth", map_location="cpu"))
+    dvae = models.audio.tts.lucidrains_dvae.DiscreteVAE(
+        positional_dims=1,
+        num_tokens=8192,
+        codebook_dim=512,
+        num_layers=2,
+        num_resnet_blocks=3,
+        hidden_dim=512,
+        channels=80,
+        stride=2,
+        kernel_size=3,
+        use_transposed_convs=False,
+        encoder_norm=False,
+        activation='relu',
+        smooth_l1_loss=False,
+        straight_through=False,
+        normalization=None,
+        use_lr_quantizer=False,
+        lr_quantizer_args={},
+    ).to(rank)
+    dvae.load_state_dict(torch.load(".models/dvae.pth", map_location="cpu"))
 
-        model = Model().to(rank)
-        model.autoregressive.load_state_dict(torch.load(".models/autoregressive.pth", map_location="cpu"))
-        model.train()
+    model = Model().to(rank)
+    model.autoregressive.load_state_dict(torch.load(".models/autoregressive.pth", map_location="cpu"))
+    model.train()
 
-        ddp_model = torch.nn.parallel.DistributedDataParallel(
-            model,
-            device_ids=[rank],
-        )
+    ddp_model = torch.nn.parallel.DistributedDataParallel(
+        model,
+        device_ids=[rank],
+    )
 
-        optimizer = torch.distributed.optim.ZeroRedundancyOptimizer(
-            model.parameters(),
-            optimizer_class=torch.optim.AdamW,
-            lr=LEARNING_RATE,
-            weight_decay=WEIGHT_DECAY,
-            betas=[0.9, 0.96],
-        )
-        param_count = sum(np.prod(p.shape) for p in model.parameters())
+    optimizer = torch.distributed.optim.ZeroRedundancyOptimizer(
+        model.parameters(),
+        optimizer_class=torch.optim.AdamW,
+        lr=LEARNING_RATE,
+        weight_decay=WEIGHT_DECAY,
+        betas=[0.9, 0.96],
+    )
+    param_count = sum(np.prod(p.shape) for p in model.parameters())
 
-        gradient_accum = BATCH_SIZE // MICROBATCH_SIZE // torch.cuda.device_count()
-        grad_norm_ = 0
-        for epoch in tqdm(range(EPOCHS)):
-            sampler.set_epoch(epoch)
-            for batch_index, batch in enumerate(pbar := tqdm(loader, disable=rank != 0)):
-                do_optim = (batch_index + 1) % gradient_accum == 0 or batch_index == len(loader) - 1
+    gradient_accum = BATCH_SIZE // MICROBATCH_SIZE // torch.cuda.device_count()
+    grad_norm_ = 0
+    for epoch in tqdm(range(EPOCHS)):
+        sampler.set_epoch(epoch)
+        for batch_index, batch in enumerate(pbar := tqdm(loader, disable=rank != 0)):
+            do_optim = (batch_index + 1) % gradient_accum == 0 or batch_index == len(loader) - 1
 
-                with torch.no_grad():
-                    input_melspec = melspec_xform(batch.target_audio.to(rank))
-                    target_codes = dvae.get_codebook_indices(input_melspec)
+            with torch.no_grad():
+                input_melspec = melspec_xform(batch.target_audio.to(rank))
+                target_codes = dvae.get_codebook_indices(input_melspec)
 
-                    cond_shape = batch.cond_audio.shape
-                    cond_audio = batch.cond_audio.reshape(cond_shape[0] * cond_shape[1], cond_shape[2])
-                    cond_melspec = melspec_xform(cond_audio.to(rank))
-                    cond_melspec = cond_melspec.reshape(cond_shape[0], cond_shape[1], cond_melspec.shape[1], -1)
+                cond_shape = batch.cond_audio.shape
+                cond_audio = batch.cond_audio.reshape(cond_shape[0] * cond_shape[1], cond_shape[2])
+                cond_melspec = melspec_xform(cond_audio.to(rank))
+                cond_melspec = cond_melspec.reshape(cond_shape[0], cond_shape[1], cond_melspec.shape[1], -1)
 
-                with contextlib.nullcontext() if do_optim else ddp_model.no_sync():
-                    text_loss, mel_loss = ddp_model(
-                        batch.source_ids,
-                        batch.source_lens,
-                        cond_melspec,
-                        target_codes,
-                        batch.target_lens,
-                    )
-                    loss = 0.01 * text_loss + mel_loss
-
-                    (loss / gradient_accum).backward()
-                    memory = torch.cuda.max_memory_allocated(rank)
-
-                if do_optim:
-                    optimizer.step()
-                    grad_norm_ = grad_norm(model)
-                    optimizer.zero_grad()
-
-                pbar.set_postfix(
-                    text_loss=float(text_loss.mean()),
-                    mel_loss=float(mel_loss.mean()),
-                    grad=float(grad_norm_),
-                    params=f"{param_count // 1e6}M",
-                    memory=f"{memory / 2**30:0.2f}GB",
+            with contextlib.nullcontext() if do_optim else ddp_model.no_sync():
+                text_loss, mel_loss = ddp_model(
+                    batch.source_ids,
+                    batch.source_lens,
+                    cond_melspec,
+                    target_codes,
+                    batch.target_lens,
                 )
+                loss = 0.01 * text_loss + mel_loss
 
-        if rank == 0:
-            state = {k: v for k, v in model.autoregressive.state_dict().items()
-                     if not k.startswith("inference_model.") and k != "gpt.wte.weight"}
-            git_hash = git.Repo().head.object.hexsha[:7]
-            torch.save(state, f".models/ar-warble-{git_hash}.pth")
-    finally:
-        torch.distributed.destroy_process_group()
+                (loss / gradient_accum).backward()
+                memory = torch.cuda.max_memory_allocated(rank)
+
+            if do_optim:
+                optimizer.step()
+                grad_norm_ = grad_norm(model)
+                optimizer.zero_grad()
+
+            pbar.set_postfix(
+                text_loss=float(text_loss.mean()),
+                mel_loss=float(mel_loss.mean()),
+                grad=float(grad_norm_),
+                params=f"{param_count // 1e6}M",
+                memory=f"{memory / 2**30:0.2f}GB",
+            )
+
+    if rank == 0:
+        state = {k: v for k, v in model.autoregressive.state_dict().items()
+                 if not k.startswith("inference_model.") and k != "gpt.wte.weight"}
+        git_hash = git.Repo().head.object.hexsha[:7]
+        torch.save(state, f".models/ar-warble-{git_hash}.pth")
 
 
 if __name__ == "__main__":
