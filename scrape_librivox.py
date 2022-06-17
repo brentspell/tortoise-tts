@@ -77,18 +77,24 @@ def main():
                                         try:
                                             filename, _headers = urllib.request.urlretrieve(chapter_url.replace("_64kb.mp3", "_128kb.mp3"), reporthook=lambda chunk, chunksize, _total: pbar2.update(chunksize))
                                         except urllib.request.HTTPError as e:
+                                            if e.status == 500:
+                                                continue
                                             if e.status != 404:
                                                 raise
                                             print("falling back on no bitrate book")
                                             try:
                                                 filename, _headers = urllib.request.urlretrieve(chapter_url.replace("_64kb.mp3", ".mp3"), reporthook=lambda chunk, chunksize, _total: pbar2.update(chunksize))
                                             except urllib.request.HTTPError as e:
+                                                if e.status == 500:
+                                                    continue
                                                 if e.status != 404:
                                                     raise
                                                 print("falling back on 64kbps book")
                                                 try:
                                                     filename, _headers = urllib.request.urlretrieve(chapter_url, reporthook=lambda chunk, chunksize, _total: pbar2.update(chunksize))
                                                 except urllib.request.HTTPError as e:
+                                                    if e.status == 500:
+                                                        continue
                                                     if e.status != 404:
                                                         raise
                                                     continue
