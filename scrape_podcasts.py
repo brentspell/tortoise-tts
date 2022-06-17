@@ -88,9 +88,9 @@ def main():
         try:
             with tempfile.NamedTemporaryFile(suffix=".wav") as output_file:
                 with soundfile.SoundFile(output_file.name, "w", samplerate=24000, channels=1) as output_audio:
-                    if episode_type in {"audio/mp3", "audio/mpeg"}:
-                        with Path(filename).open("rb") as audio_file:
-                            try:
+                    try:
+                        if episode_type in {"audio/mp3", "audio/mpeg"}:
+                            with Path(filename).open("rb") as audio_file:
                                 decoder = streamp3.MP3Decoder(audio_file)
                                 sample_rate = decoder.sample_rate
                                 channels = decoder.num_channels
@@ -98,14 +98,14 @@ def main():
                                 if decoder.bit_rate < 128000:
                                     print("bit rate too low", decoder.bit_rate)
                                     continue
-                            except Exception:
-                                print("bad mp3 stream")
-                                continue
-                    elif episode_type == "audio/x-m4a":
-                        segment = pydub.AudioSegment.from_file(filename, "m4a")
-                        sample_rate = segment.frame_rate
-                        channels = segment.channels
-                        signal = np.array(segment.get_array_of_samples("h"))
+                        elif episode_type == "audio/x-m4a":
+                            segment = pydub.AudioSegment.from_file(filename, "m4a")
+                            sample_rate = segment.frame_rate
+                            channels = segment.channels
+                            signal = np.array(segment.get_array_of_samples("h"))
+                    except Exception:
+                        print("bad audio stream")
+                        continue
 
                     if sample_rate < 24000:
                         print("sample rate too low", sample_rate)
