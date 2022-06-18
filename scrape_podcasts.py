@@ -113,6 +113,9 @@ def main():
                     if len(signal) < 5 * 60 * sample_rate:
                         print("signal too short", len(signal) / sample_rate)
                         continue
+                    if len(signal) > 3 * 3600 * sample_rate:
+                        print("signal too long", len(signal) / sample_rate)
+                        continue
                     signal = (signal.astype(np.float32) / 32767).reshape([-1, channels]).sum(-1)
                     signal = torchaudio.functional.resample(torch.from_numpy(signal), sample_rate, 24000).numpy()
                     signal = (np.clip(signal, -1, 1) * 32767).astype(np.int16)

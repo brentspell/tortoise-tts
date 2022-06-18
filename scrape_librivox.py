@@ -76,6 +76,8 @@ def main():
                                     with tqdm(unit="B", unit_scale=True, unit_divisor=1000, mininterval=1, leave=False, desc="downloading") as pbar2:
                                         try:
                                             filename, _headers = urllib.request.urlretrieve(chapter_url.replace("_64kb.mp3", "_128kb.mp3"), reporthook=lambda chunk, chunksize, _total: pbar2.update(chunksize))
+                                        except urllib.error.ContentTooShortError:
+                                            continue
                                         except urllib.request.HTTPError as e:
                                             if e.status == 500:
                                                 continue
