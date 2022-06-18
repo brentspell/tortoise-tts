@@ -62,6 +62,8 @@ def main():
                 print("bad language", language)
                 continue
             episodes = soup.find_all("item")
+            if not episodes:
+                continue
             episode = random.choice(episodes)
             episode_id = episode.find("itunes:episode")
             episode_link = episode.find("link")
