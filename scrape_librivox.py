@@ -114,6 +114,9 @@ def main():
 
                                             metadata.append((chapter_reader, book_length, len(chapter_audio), date, decoder.sample_rate, decoder.bit_rate))
                                             book_length += len(chapter_audio)
+                                    except Exception as e:
+                                        print("failed to decode", e)
+                                        continue
                                     finally:
                                         Path(filename).unlink()
 
