@@ -1,7 +1,9 @@
 import contextlib
+import mmap
 import os
 import random
 import re
+import sqlite3
 import sys
 import typing as T
 import warnings
@@ -34,19 +36,16 @@ import tortoise.models
 import tortoise.utils.tokenizer
 import models.audio.tts.lucidrains_dvae
 
-def group_by(seq, key):
-    groups = defaultdict(list)
-    for value in seq:
-        groups[key(value)].append(value)
-    return groups
 
-def normalize(audio, fs, ref_db=-18, block_size=0.4, block_overlap=0.75):
-    frame_length = int(block_size * fs)
-    frame_stride = int((1 - block_overlap) * frame_length)
-    frames = torch.tensor(audio).unfold(-1, size=frame_length, step=frame_stride)
-    power = frames.square().mean(dim=1).sqrt().max().item()
-
-    return audio * (10**(ref_db / 20) / max(power, 1e-5))
+@contextlib.contextmanager
+def mmap_direct(path: Path) -> T.Iterator[mmap.mmap]:
+    fileno = os.open(str(path), os.O_RDONLY | os.O_DIRECT)
+    try:
+        with mmap.mmap(fileno, length=0, prot=mmap.PROT_READ) as mmap_:
+            mmap_.madvise(mmap.MADV_SEQUENTIAL)
+            yield mmap_
+    finally:
+        os.close(fileno)
 
 
 def grad_norm(model: torch.nn.Module) -> torch.Tensor:
@@ -54,14 +53,15 @@ def grad_norm(model: torch.nn.Module) -> torch.Tensor:
     return torch.stack(norms).square().sum().sqrt()
 
 
-SAMPLE_RATE = 22050
+SAMPLE_RATE = 24000
 COND_LENGTH = 6 * SAMPLE_RATE
 
-EPOCHS = 2
+EPOCHS = 5
 BATCH_SIZE = 1024
 MICROBATCH_SIZE = 32
 LEARNING_RATE = 5e-5
 WEIGHT_DECAY = 1e-2
+
 
 class Record(T.NamedTuple):
     cond_audio: torch.Tensor
@@ -70,33 +70,53 @@ class Record(T.NamedTuple):
     target_audio: torch.Tensor
     target_lens: torch.Tensor
 
+
 class Dataset(torch.utils.data.Dataset):
     def __init__(self, path, training):
         super().__init__()
 
-        self._file = h5py.File(path, "r")
-        self._speaker_keys = {
-            k: v[10:] if training else v[:10]
-            for k, v in group_by(
-                sorted([k for k in self._file.keys()]),
-                lambda k: self._file[k].attrs["speaker"]
-            ).items()
-        }
-        self._sample_keys = sum(self._speaker_keys.values(), [])
+        self._db = sqlite3.connect("/d/data/index.db")
+        dataset_id = next(self._db.execute("select rowid from dataset where name = 'warble';"))[0]
+        self._sample_ids = [r[0] for r in self._db.execute("select rowid from sample where dataset_id = :dataset_id;", dict(dataset_id=dataset_id))]
         self._tokenizer = tortoise.utils.tokenizer.VoiceBpeTokenizer()
 
     def __len__(self):
-        return len(self._sample_keys)
+        return len(self._sample_ids)
 
     def __getitem__(self, index):
-        sample = self._file[self._sample_keys[index]]
-        speaker = sample.attrs["speaker"]
-        text = sample.attrs["text"]
+        sample_id = self._sample_ids[index]
+        results = list(self._db.execute(
+            """
+            select transcript, path, offset, length
+            from
+                sample
+                inner join file on sample.file_id = file.rowid
+            where sample.rowid = :rowid
+            union all
+            select * from (
+                select null, path, sample.offset, sample.length
+                from
+                    sample
+                    inner join sample example on
+                        sample.dataset_id = example.dataset_id
+                        and sample.speaker_id = example.speaker_id
+                    inner join file on sample.file_id = file.rowid
+                where
+                    example.rowid = :rowid
+                    and sample.rowid <> :rowid
+                order by random()
+                limit 2
+            );
+            """,
+            dict(rowid=sample_id),
+        ))
+        text, path, offset, length = results[0]
+        source_ids = np.array(self._tokenizer.encode(text)).astype(np.int64)
+        target_audio = self._load_audio(path, offset, length)
 
         cond_audio = []
-        for cond_key in random.sample(self._speaker_keys[speaker], 2):
-            cond_sample = self._file[cond_key]
-            audio = cond_sample["audio"][:].astype(np.float32) / (2**15 - 1)
+        for _, path, offset, length in results[1:]:
+            audio = self._load_audio(path, offset, length)
             if len(audio) < COND_LENGTH:
                 audio = np.hstack([audio] * (COND_LENGTH // len(audio) + 1))
             if len(audio) > COND_LENGTH:
@@ -104,10 +124,6 @@ class Dataset(torch.utils.data.Dataset):
                 audio = audio[offset:offset + COND_LENGTH]
             cond_audio.append(audio)
         cond_audio = np.stack(cond_audio)
-
-        target_audio = sample["audio"][:].astype(np.float32) / (2**15 - 1)
-
-        source_ids = np.array(self._tokenizer.encode(text)).astype(np.int64)
 
         return Record(
             cond_audio=cond_audio,
@@ -117,16 +133,23 @@ class Dataset(torch.utils.data.Dataset):
             target_lens=len(target_audio),
         )
 
+    def _load_audio(self, path, offset, length):
+        with mmap_direct(Path("/d/data") / path) as mmap_:
+            audio = np.frombuffer(mmap_, dtype=np.int16)[22:]
+            audio = audio[offset:offset + length].astype(np.float32)
+            audio /= 32767.0
+            return audio
+
     @staticmethod
     def collate(examples):
         source_len_max = max(x.source_lens for x in examples)
         target_len_max = max(x.target_lens for x in examples)
         return Record(
-            cond_audio = torch.stack([torch.from_numpy(x.cond_audio) for x in examples]),
-            source_ids = torch.stack([torch.from_numpy(np.pad(x.source_ids, [(0, source_len_max - len(x.source_ids))])) for x in examples]),
-            source_lens = torch.tensor([x.source_lens for x in examples], dtype=torch.int64),
-            target_audio = torch.stack([torch.from_numpy(np.pad(x.target_audio, [(0, target_len_max - len(x.target_audio))])) for x in examples]),
-            target_lens = torch.tensor([x.target_lens for x in examples], dtype=torch.int64),
+            cond_audio=torch.stack([torch.from_numpy(x.cond_audio) for x in examples]),
+            source_ids=torch.stack([torch.from_numpy(np.pad(x.source_ids, [(0, source_len_max - len(x.source_ids))])) for x in examples]),
+            source_lens=torch.tensor([x.source_lens for x in examples], dtype=torch.int64),
+            target_audio=torch.stack([torch.from_numpy(np.pad(x.target_audio, [(0, target_len_max - len(x.target_audio))])) for x in examples]),
+            target_lens=torch.tensor([x.target_lens for x in examples], dtype=torch.int64),
         )
 
 
@@ -233,12 +256,21 @@ def train(rank, world):
             do_optim = (batch_index + 1) % gradient_accum == 0 or batch_index == len(loader) - 1
 
             with torch.no_grad():
-                input_melspec = melspec_xform(batch.target_audio.to(rank))
-                target_codes = dvae.get_codebook_indices(input_melspec)
+                target_audio = torchaudio.functional.resample(
+                    batch.target_audio.to(rank),
+                    SAMPLE_RATE,
+                    22050,
+                )
+                target_melspec = melspec_xform(target_audio)
+                target_codes = dvae.get_codebook_indices(target_melspec)
 
                 cond_shape = batch.cond_audio.shape
-                cond_audio = batch.cond_audio.reshape(cond_shape[0] * cond_shape[1], cond_shape[2])
-                cond_melspec = melspec_xform(cond_audio.to(rank))
+                cond_audio = torchaudio.functional.resample(
+                    batch.cond_audio.to(rank).reshape(cond_shape[0] * cond_shape[1], cond_shape[2]),
+                    SAMPLE_RATE,
+                    22050,
+                )
+                cond_melspec = melspec_xform(cond_audio)
                 cond_melspec = cond_melspec.reshape(cond_shape[0], cond_shape[1], cond_melspec.shape[1], -1)
 
             with contextlib.nullcontext() if do_optim else ddp_model.no_sync():
